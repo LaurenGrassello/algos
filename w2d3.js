@@ -40,7 +40,7 @@ function diagonalDifference(sqrMatrix) {
     }
 return Math.abs(sumL - sumR)
 }
-console.log(diagonalDifference(squareMatrix2));
+console.log(diagonalDifference(squareMatrix1));
 
 
 // group code
