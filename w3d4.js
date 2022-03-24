@@ -35,25 +35,39 @@ const badHabit3 = "typo";
 const expected3 = [];
 
 
-function santasNaughtyList2(persons, badHabit) {
-    let nameArray = []
+// function santasNaughtyList2(persons, badHabit) {
+//     let nameArray = []
 
-    for (object of students) {
-        for (key in object) {
-            if (key === "habits") {
-                for (element of object[key]) {
-                    if (element === badHabit) {
-                        let name = object.firstName + " " + object.lastName
-                        nameArray.push(name)
-                    }
-                }
-            }
-        }
-    }
-    return nameArray
+//     for (object of students) {
+//         for (key in object) {
+//             if (key === "habits") {
+//                 for (element of object[key]) {
+//                     if (element === badHabit) {
+//                         let name = object.firstName + " " + object.lastName
+//                         nameArray.push(name)
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     return nameArray
+// }
+
+// console.log(santasNaughtyList2(students, "doesn't wash dishes"))
+
+
+function santasNaughtyListFunctional(persons, badHabit) { 
+    return (
+    persons.filter((person)=> person.habits.includes(badHabit)))
+    .map((person) => `${person.firstName} ${person.lastName}`)
 }
 
-console.log(santasNaughtyList2(students, "doesn't wash dishes"))
+const santasNaughtyListFunctional2 = (persons, badHabit) =>(
+    persons
+    .filter((person)=> person.habits.includes(badHabit)))
+    .map((person) => `${person.firstName} ${person.lastName}`)
+)
 
-
-function santasNaughtyListFunctional(persons, badHabit) { }
+console.log(santasNaughtyListFunctional(students, badHabit1) )
+console.log(santasNaughtyListFunctional(students, badHabit2) )
+console.log(santasNaughtyListFunctional(students, badHabit3) )
