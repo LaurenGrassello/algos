@@ -60,7 +60,7 @@ const people = [
         }
       }
     }
-     return newArr
+    return newArr
   }
   
   console.log("================================================")
